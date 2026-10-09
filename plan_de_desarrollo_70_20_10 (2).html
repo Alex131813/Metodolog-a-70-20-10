@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Desarrollo Profesional 70-20-10</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-brand { background: linear-gradient(135deg, #0d3b66 0%, #001f3f 100%); }
+        .gradient-70 { background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%); }
+        .gradient-20 { background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); }
+        .gradient-10 { background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%); }
+        .tab-active { border-bottom: 3px solid #2563eb; color: #1d4ed8; font-weight: 700; }
+        .card-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col antialiased">
+
+    <header class="gradient-brand text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-400/30 flex items-center justify-center font-bold text-xl text-blue-300">
+                    70
+                </div>
+                <div>
+                    <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+                        Plan de Desarrollo
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-500/30 text-blue-200 border border-blue-400/30">Metodología 70-20-10</span>
+                    </h1>
+                    <p class="text-xs text-blue-200 hidden sm:block">Impulsa tus fortalezas y transforma tus áreas de oportunidad</p>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-2 text-sm font-medium">
+                <a href="#modelo" class="px-3 py-2 rounded-lg hover:bg-white/10 transition">El Modelo</a>
+                <a href="#diagnostico" class="px-3 py-2 rounded-lg hover:bg-white/10 transition">Diagnóstico</a>
+                <a href="#generador" class="px-3 py-2 rounded-lg hover:bg-white/10 transition">Crea tu PDI</a>
+                <a href="#quiz" class="px-3 py-2 rounded-lg hover:bg-white/10 transition">Desafío 70-20-10</a>
+                <button onclick="toggleAiChat()" class="px-3 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white rounded-lg transition flex items-center gap-1.5 shadow-sm text-xs font-semibold">
+                    <i class="fa-solid fa-wand-magic-sparkles text-amber-300"></i> AI Mentor
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section class="bg-gradient-to-b from-blue-900 to-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            <div class="max-w-5xl mx-auto text-center relative z-10">
+                <span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-semibold mb-4 border border-blue-400/20">
+                    <i class="fa-solid fa-graduation-cap mr-1"></i> Desarrollo de Talento & Crecimiento
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">
+                    ¿Cómo aprendemos realmente en el trabajo?
+                </h2>
+                <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto font-light leading-relaxed">
+                    Este plan utiliza la metodología <strong class="text-white font-semibold">70-20-10</strong> para el desarrollo profesional. 
+                    Identifica tus fortalezas para potenciarlas y tus áreas de oportunidad para trabajar en ellas.
+                </p>
+                
+                <!-- Quick Navigation Pills -->
+                <div class="mt-8 flex flex-wrap justify-center gap-3 text-sm">
+                    <a href="#modelo" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-xl font-medium shadow-md transition flex items-center gap-2">
+                        <i class="fa-solid fa-chart-pie"></i> Explorar Pilares
+                    </a>
+                    <a href="#generador" class="bg-slate-800 hover:bg-slate-700 text-blue-300 border border-slate-600 px-5 py-2.5 rounded-xl font-medium transition flex items-center gap-2">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Diseñar mi Plan PDI
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="modelo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Los 3 Pilares del Desarrollo Profesional</h2>
+                <p class="text-slate-600 mt-2">Haz clic en cada porcentaje para profundizar en sus componentes, mejores prácticas y ejemplos reales.</p>
+            </div>
+
+            <!-- Visual Percentage Progress Bar -->
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 mb-8">
+                <div class="flex h-12 rounded-xl overflow-hidden text-white font-bold text-sm sm:text-base shadow-inner">
+                    <button onclick="selectPillar('70')" id="bar-70" class="w-[70%] gradient-70 flex items-center justify-center transition-all duration-300 hover:brightness-110 focus:outline-none cursor-pointer group">
+                        <span class="truncate px-2 group-hover:scale-105 transition"><i class="fa-solid fa-briefcase mr-1"></i> 70% Experiencial</span>
+                    </button>
+                    <button onclick="selectPillar('20')" id="bar-20" class="w-[20%] gradient-20 flex items-center justify-center transition-all duration-300 hover:brightness-110 focus:outline-none cursor-pointer group">
+                        <span class="truncate px-1 group-hover:scale-105 transition"><i class="fa-solid fa-users mr-1"></i> 20% Social</span>
+                    </button>
+                    <button onclick="selectPillar('10')" id="bar-10" class="w-[10%] gradient-10 flex items-center justify-center transition-all duration-300 hover:brightness-110 focus:outline-none cursor-pointer group">
+                        <span class="truncate px-1 group-hover:scale-105 transition"><i class="fa-solid fa-book-open mr-1"></i> 10% Formal</span>
+                    </button>
+                </div>
+                <div class="flex justify-between text-xs text-slate-500 mt-2 px-1">
+                    <span>Práctica directa en el puesto (70%)</span>
+                    <span>Redes & Mentoría (20%)</span>
+                    <span>Capacitación estructurada (10%)</span>
+                </div>
+            </div>
+
+            <!-- Interactive Pillar Detail Cards -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+                <!-- 70% Card -->
+                <div id="card-70" class="bg-white rounded-2xl border-2 border-blue-600 shadow-md p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-xl cursor-pointer" onclick="selectPillar('70')">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-4xl font-extrabold text-blue-900">70%</span>
+                            <span class="p-3 bg-blue-100 text-blue-800 rounded-xl">
+                                <i class="fa-solid fa-laptop-code text-xl"></i>
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Aprendizaje Experiencial</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Se refiere al aprendizaje que se obtiene a través de la <strong>práctica directa y las experiencias en el trabajo</strong>. Es donde el conocimiento abstracto se transforma en competencia real.
+                        </p>
+                        <div class="border-t border-slate-100 pt-4">
+                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Ejemplos clave en el puesto:</h4>
+                            <ul class="text-xs text-slate-700 space-y-2">
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-blue-600 mt-0.5"></i> Tareas retadoras fuera de la zona de confort.</li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-blue-600 mt-0.5"></i> Proyectos especiales e interdepartamentales.</li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-blue-600 mt-0.5"></i> Rotación de funciones y asignaciones temporales.</li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-blue-600 mt-0.5"></i> Resolver problemas impredecibles o nuevos.</li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-blue-600 mt-0.5"></i> Asumir responsabilidades o liderar comités.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex justify-between items-center text-xs font-semibold text-blue-700">
+                        <span>Pilar de Mayor Impacto</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- 20% Card -->
+                <div id="card-20" class="bg-white rounded-2xl border border-slate-200 shadow-md p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-xl cursor-pointer" onclick="selectPillar('20')">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-4xl font-extrabold text-sky-700">20%</span>
+                            <span class="p-3 bg-sky-100 text-sky-800 rounded-xl">
+                                <i class="fa-solid fa-people-arrows text-xl"></i>
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Aprendizaje Social</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Se refiere al aprendizaje que proviene de la <strong>interacción con otras personas</strong>. Acelera la curva de aprendizaje a través de la perspectiva y el acompañamiento.
+                        </p>
+                        <div class="border-t border-slate-100 pt-4">
+                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Ejemplos clave en el puesto:</h4>
+                            <ul class="text-xs text-slate-700 space-y-2">
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-sky-600 mt-0.5"></i> Sesiones de Mentoría y Coaching.</li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-sky-600 mt-0.5"></i> Retroalimentación continua de líderes y pares.</li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-sky-600 mt-0.5"></i> Observación de modelos a seguir (Job Shadowing).</li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-sky-600 mt-0.5"></i> Participación en comunidades de práctica.</li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-sky-600 mt-0.5"></i> Trabajo colaborativo y co-creación.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex justify-between items-center text-xs font-semibold text-sky-700">
+                        <span>Pilar de Conexión & Redes</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- 10% Card -->
+                <div id="card-10" class="bg-white rounded-2xl border border-slate-200 shadow-md p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-xl cursor-pointer" onclick="selectPillar('10')">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-4xl font-extrabold text-teal-700">10%</span>
+                            <span class="p-3 bg-teal-100 text-teal-800 rounded-xl">
+                                <i class="fa-solid fa-graduation-cap text-xl"></i>
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Aprendizaje Formal</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Se refiere al aprendizaje <strong>estructurado y programado</strong>. Entrega los cimientos teóricos y metodológicos necesarios para abordar los retos con marco de referencia.
+                        </p>
+                        <div class="border-t border-slate-100 pt-4">
+                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Ejemplos clave en el puesto:</h4>
+                            <ul class="text-xs text-slate-700 space-y-2">
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-teal-600 mt-0.5"></i> Cursos presenciales o en línea.</li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-teal-600 mt-0.5"></i> Talleres práticos (Workshops) y seminarios.</li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-teal-600 mt-0.5"></i> Certificaciones profesionales oficiales.</li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-teal-600 mt-0.5"></i> Lecturas especializadas, artículos y libros.</li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-teal-600 mt-0.5"></i> Diplomados y programas de e-learning.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex justify-between items-center text-xs font-semibold text-teal-700">
+                        <span>Pilar de Fundamento Teórico</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Deep Dive Dynamic Box -->
+            <div id="pillar-detail-box" class="mt-8 bg-blue-50 border border-blue-200 rounded-2xl p-6 transition-all duration-300">
+                <div class="flex items-start gap-4">
+                    <div class="text-blue-700 text-3xl"><i id="detail-icon" class="fa-solid fa-lightbulb"></i></div>
+                    <div>
+                        <h4 id="detail-title" class="text-lg font-bold text-blue-900">¿Por qué funciona la regla 70-20-10?</h4>
+                        <p id="detail-desc" class="text-sm text-blue-800 mt-1 leading-relaxed">
+                            No significa que el 10% formal no sea importante: es el <strong>catalizador</strong>. La teoría (10%) te da la chispa, el feedback y la guía de otros (20%) afina tu perspectiva, y la aplicación práctica (70%) consolida la destreza en tu ADN profesional.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="diagnostico" class="bg-slate-100 py-12 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-8">
+                    <span class="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-100 px-3 py-1 rounded-full">Herramienta Interactiva</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-2">Diagnóstico de Distribución de Aprendizaje</h2>
+                    <p class="text-slate-600 text-sm mt-1">¿Cómo inviertes actualmente tu tiempo de desarrollo profesional?</p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-md border border-slate-200 p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    
+                    <!-- Sliders -->
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <label class="text-sm font-semibold text-slate-800 flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-blue-700"></span> Práctica / Retos diarios
+                                </label>
+                                <span id="val-70" class="text-sm font-bold text-blue-700">50%</span>
+                            </div>
+                            <input type="range" id="input-70" min="0" max="100" value="50" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-700" oninput="updateDiagnostic()">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <label class="text-sm font-semibold text-slate-800 flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-sky-500"></span> Interacción / Mentoría / Peers
+                                </label>
+                                <span id="val-20" class="text-sm font-bold text-sky-600">25%</span>
+                            </div>
+                            <input type="range" id="input-20" min="0" max="100" value="25" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-sky-500" oninput="updateDiagnostic()">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <label class="text-sm font-semibold text-slate-800 flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-teal-500"></span> Cursos / Lecturas / Clases
+                                </label>
+                                <span id="val-10" class="text-sm font-bold text-teal-600">25%</span>
+                            </div>
+                            <input type="range" id="input-10" min="0" max="100" value="25" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-teal-500" oninput="updateDiagnostic()">
+                        </div>
+
+                        <div id="diag-feedback" class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 leading-relaxed">
+                            Ajusta los deslizadores para simular tu distribución actual.
+                        </div>
+                    </div>
+
+                    <!-- Comparison Chart -->
+                    <div class="flex flex-col items-center justify-center">
+                        <div class="w-full max-w-[280px] h-[280px] relative">
+                            <canvas id="diagChart"></canvas>
+                        </div>
+                        <p class="text-xs text-slate-500 text-center mt-3">Compara tu enfoque actual con la meta recomendada (70-20-10)</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="generador" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center mb-10">
+                <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 bg-emerald-100 px-3 py-1 rounded-full">Diseñador de Plan</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-2">Crea tu Plan de Desarrollo Individual (PDI)</h2>
+                <p class="text-slate-600 text-sm mt-1">Selecciona una competencia clave que quieras desarrollar y arma tu combinación 70-20-10 personalizada.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
+                <!-- Step Header -->
+                <div class="bg-slate-900 text-white p-6 flex flex-wrap justify-between items-center gap-4">
+                    <div>
+                        <h3 class="font-bold text-lg">Paso 1: Selecciona la Competencia a Potenciar</h3>
+                        <p class="text-xs text-slate-300">Elige la meta principal o usa la Inteligencia Artificial para personalizar tu plan.</p>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-3">
+                        <button onclick="openAiGeneratorModal()" class="bg-gradient-to-r from-indigo-500 to-blue-600 hover:from-indigo-600 hover:to-blue-700 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition flex items-center gap-2 shadow-md border border-indigo-400/30">
+                            <i class="fa-solid fa-sparkles text-amber-300"></i> Generar con IA (Gemini)
+                        </button>
+                        <select id="competency-select" onchange="generatePlanTemplates()" class="bg-slate-800 text-white text-sm border border-slate-600 rounded-xl px-4 py-2.5 focus:outline-none focus:border-blue-400">
+                            <option value="leadership">Liderazgo y Gestión de Equipos</option>
+                            <option value="communication">Comunicación Efectiva e Influencia</option>
+                            <option value="project">Gestión de Proyectos e Innovación</option>
+                            <option value="analytics">Pensamiento Analítico y Resolución de Problemas</option>
+                            <option value="custom">+ Personalizado (Escribir propia área)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="custom-competency-wrapper" class="p-4 bg-slate-100 border-b border-slate-200 hidden">
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Nombre de la Competencia Personalizada:</label>
+                    <input type="text" id="custom-competency-input" placeholder="Ej: Gestión del Cambio y Resiliencia" class="w-full text-sm p-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none">
+                </div>
+
+                <div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6 bg-slate-50/50">
+                    <!-- 70% Pillar Column -->
+                    <div class="bg-white p-5 rounded-2xl border border-blue-200 shadow-sm flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
+                                <span class="font-bold text-sm text-blue-900 flex items-center gap-1.5"><i class="fa-solid fa-briefcase text-blue-600"></i> 70% Experiencial</span>
+                                <span class="text-xs font-semibold text-blue-700 bg-blue-50 px-2 py-0.5 rounded-full">Práctica</span>
+                            </div>
+                            <div id="tasks-70-container" class="space-y-2 max-h-60 overflow-y-auto pr-1"></div>
+                        </div>
+                        <div class="pt-2 border-t border-slate-100 flex gap-2">
+                            <input type="text" id="add-70-input" placeholder="Añadir acción 70%..." class="flex-grow text-xs p-2 border border-slate-200 rounded-lg outline-none focus:border-blue-500">
+                            <button onclick="addCustomTask('70')" class="bg-blue-600 hover:bg-blue-700 text-white text-xs px-3 py-2 rounded-lg font-semibold transition"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- 20% Pillar Column -->
+                    <div class="bg-white p-5 rounded-2xl border border-sky-200 shadow-sm flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
+                                <span class="font-bold text-sm text-sky-900 flex items-center gap-1.5"><i class="fa-solid fa-users text-sky-600"></i> 20% Social</span>
+                                <span class="text-xs font-semibold text-sky-700 bg-sky-50 px-2 py-0.5 rounded-full">Redes & Feedback</span>
+                            </div>
+                            <div id="tasks-20-container" class="space-y-2 max-h-60 overflow-y-auto pr-1"></div>
+                        </div>
+                        <div class="pt-2 border-t border-slate-100 flex gap-2">
+                            <input type="text" id="add-20-input" placeholder="Añadir acción 20%..." class="flex-grow text-xs p-2 border border-slate-200 rounded-lg outline-none focus:border-sky-500">
+                            <button onclick="addCustomTask('20')" class="bg-sky-600 hover:bg-sky-700 text-white text-xs px-3 py-2 rounded-lg font-semibold transition"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- 10% Pillar Column -->
+                    <div class="bg-white p-5 rounded-2xl border border-teal-200 shadow-sm flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
+                                <span class="font-bold text-sm text-teal-900 flex items-center gap-1.5"><i class="fa-solid fa-graduation-cap text-teal-600"></i> 10% Formal</span>
+                                <span class="text-xs font-semibold text-teal-700 bg-teal-50 px-2 py-0.5 rounded-full">Capacitación</span>
+                            </div>
+                            <div id="tasks-10-container" class="space-y-2 max-h-60 overflow-y-auto pr-1"></div>
+                        </div>
+                        <div class="pt-2 border-t border-slate-100 flex gap-2">
+                            <input type="text" id="add-10-input" placeholder="Añadir acción 10%..." class="flex-grow text-xs p-2 border border-slate-200 rounded-lg outline-none focus:border-teal-500">
+                            <button onclick="addCustomTask('10')" class="bg-teal-600 hover:bg-teal-700 text-white text-xs px-3 py-2 rounded-lg font-semibold transition"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Toolbar -->
+                <div class="bg-slate-50 p-6 border-t border-slate-200 flex flex-wrap justify-between items-center gap-4">
+                    <div class="text-xs text-slate-500">
+                        <i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> Puedes seleccionar varios elementos o escribir tus propios compromisos.
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <button onclick="analyzePlanWithAi()" id="btn-ai-analyze" class="bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 text-sm px-4 py-2.5 rounded-xl font-semibold transition flex items-center gap-2 shadow-sm">
+                            <i class="fa-solid fa-brain text-indigo-600"></i> Analizar Plan con IA
+                        </button>
+                        <button onclick="copyPlanToClipboard()" class="bg-slate-800 hover:bg-slate-700 text-white text-sm px-5 py-2.5 rounded-xl font-medium transition flex items-center gap-2 shadow-sm">
+                            <i class="fa-regular fa-copy"></i> Copiar Plan
+                        </button>
+                        <button onclick="showSummaryModal()" class="bg-blue-600 hover:bg-blue-500 text-white text-sm px-5 py-2.5 rounded-xl font-medium transition flex items-center gap-2 shadow-md">
+                            <i class="fa-solid fa-eye"></i> Ver Vista Previa
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="bg-gradient-to-br from-slate-900 to-blue-950 text-white py-12 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-8">
+                    <span class="text-xs font-bold uppercase tracking-widest text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">Desafío Rápido</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold mt-2">¿Sabes clasificar cada actividad?</h2>
+                    <p class="text-slate-300 text-sm mt-1">Demuestra tu dominio identificando si la actividad corresponde al 70%, 20% o 10%.</p>
+                </div>
+
+                <div class="bg-slate-800/80 backdrop-blur border border-slate-700 rounded-2xl p-6 sm:p-8 shadow-xl">
+                    <div id="quiz-card">
+                        <div class="flex justify-between items-center text-xs text-slate-400 mb-4">
+                            <span id="quiz-progress-text">Pregunta 1 de 5</span>
+                            <span id="quiz-score-text" class="font-bold text-amber-400">Puntaje: 0</span>
+                        </div>
+
+                        <div class="bg-slate-900/60 p-6 rounded-xl border border-slate-700/80 mb-6 text-center min-h-[100px] flex items-center justify-center">
+                            <p id="quiz-question" class="text-base sm:text-lg font-medium text-slate-100">
+                                Cuestión...
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="quiz-options">
+                            <button onclick="answerQuiz('70')" class="bg-blue-900/50 hover:bg-blue-800 border border-blue-600/50 p-4 rounded-xl text-center transition group">
+                                <span class="block text-xl font-bold text-blue-400 group-hover:scale-110 transition">70%</span>
+                                <span class="text-xs text-slate-300">Experiencial</span>
+                            </button>
+                            <button onclick="answerQuiz('20')" class="bg-sky-900/50 hover:bg-sky-800 border border-sky-600/50 p-4 rounded-xl text-center transition group">
+                                <span class="block text-xl font-bold text-sky-400 group-hover:scale-110 transition">20%</span>
+                                <span class="text-xs text-slate-300">Social</span>
+                            </button>
+                            <button onclick="answerQuiz('10')" class="bg-teal-900/50 hover:bg-teal-800 border border-teal-600/50 p-4 rounded-xl text-center transition group">
+                                <span class="block text-xl font-bold text-teal-400 group-hover:scale-110 transition">10%</span>
+                                <span class="text-xs text-slate-300">Formal</span>
+                            </button>
+                        </div>
+
+                        <div id="quiz-feedback" class="mt-4 p-3 rounded-xl text-xs font-semibold text-center hidden"></div>
+                    </div>
+
+                    <div id="quiz-result" class="text-center py-6 hidden space-y-4">
+                        <div class="text-4xl text-amber-400"><i class="fa-solid fa-trophy"></i></div>
+                        <h3 class="text-xl font-bold text-white">¡Desafío Completado!</h3>
+                        <p id="quiz-final-score" class="text-sm text-slate-300"></p>
+                        <button onclick="resetQuiz()" class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold px-6 py-2.5 rounded-xl text-sm transition">
+                            Intentar de Nuevo
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Myths & Realities -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-scale-balanced text-blue-600"></i> Mitos vs. Realidades
+                    </h3>
+                    <div class="space-y-4 text-xs sm:text-sm">
+                        <div class="p-3 rounded-xl bg-slate-50 border border-slate-100">
+                            <p class="font-semibold text-red-600 mb-1"><i class="fa-solid fa-xmark mr-1"></i> Mito: "El 10% formal no sirve de mucho".</p>
+                            <p class="text-slate-600"><i class="fa-solid fa-check text-emerald-600 mr-1"></i> <strong>Realidad:</strong> Es el marco de referencia. Sin la teoría adecuada, la práctica 70% cae en prueba y error ineficiente.</p>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-50 border border-slate-100">
+                            <p class="font-semibold text-red-600 mb-1"><i class="fa-solid fa-xmark mr-1"></i> Mito: "70% significa que debo aprender totalmente solo".</p>
+                            <p class="text-slate-600"><i class="fa-solid fa-check text-emerald-600 mr-1"></i> <strong>Realidad:</strong> Significa asumir retos reales en el puesto, pero respaldado por el 20% de retroalimentación de tu líder.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Roles in 70-20-10 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-user-gear text-blue-600"></i> Tu Rol y el de tu Líder
+                    </h3>
+                    <div class="space-y-3 text-xs sm:text-sm text-slate-700">
+                        <div class="flex items-start gap-3">
+                            <span class="p-2 bg-blue-100 text-blue-800 rounded-lg text-xs font-bold">Colaborador</span>
+                            <p class="text-slate-600">Eres el <strong>dueño de tu desarrollo</strong>. Propones los proyectos 70%, buscas la mentoría 20% y aprovechas las capacitaciones 10%.</p>
+                        </div>
+                        <div class="flex items-start gap-3 border-t border-slate-100 pt-3">
+                            <span class="p-2 bg-sky-100 text-sky-800 rounded-lg text-xs font-bold">Líder / Jefe</span>
+                            <p class="text-slate-600">Actúa como <strong>facilitador y coach</strong>. Asigna proyectos retadores, brinda retroalimentación oportuna y remueve obstáculos.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="modal-preview" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200">
+            <div class="p-6 border-b border-slate-100 flex justify-between items-center">
+                <h3 class="text-lg font-bold text-slate-900"><i class="fa-solid fa-file-contract text-blue-600 mr-2"></i> Vista Previa de tu Plan (PDI 70-20-10)</h3>
+                <button onclick="closeSummaryModal()" class="text-slate-400 hover:text-slate-600 text-lg">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-6 space-y-4" id="modal-content-body">
+                <!-- Dynamic Content -->
+            </div>
+            <div class="p-6 bg-slate-50 border-t border-slate-100 flex justify-end gap-3">
+                <button onclick="closeSummaryModal()" class="px-4 py-2 text-slate-600 text-sm font-medium hover:bg-slate-200 rounded-xl">Cerrar</button>
+                <button onclick="copyPlanToClipboard()" class="px-5 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold rounded-xl shadow">Copiar Texto</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Generator Modal -->
+    <div id="modal-ai-generator" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl max-w-xl w-full shadow-2xl border border-slate-200 overflow-hidden">
+            <div class="bg-gradient-to-r from-slate-900 to-indigo-950 text-white p-6 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-500/20 border border-indigo-400/30 flex items-center justify-center text-amber-300">
+                        <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold">Generador PDI con IA Gemini</h3>
+                        <p class="text-xs text-indigo-200">Crea un plan a la medida de tu puesto y metas</p>
+                    </div>
+                </div>
+                <button onclick="closeAiGeneratorModal()" class="text-slate-400 hover:text-white text-lg">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-6 space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Tu Puesto / Rol Actual:</label>
+                    <input type="text" id="ai-input-role" placeholder="Ej: Desarrollador Senior, Gerente de Ventas, Diseñador UX" class="w-full text-sm p-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Competencia / Meta de Crecimiento:</label>
+                    <input type="text" id="ai-input-goal" placeholder="Ej: Transición a Liderazgo de Equipos, Negociación Estratégica" class="w-full text-sm p-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Desafío o Contexto Actual (Opcional):</label>
+                    <textarea id="ai-input-context" rows="2" placeholder="Ej: Equipo remoto recientemente formado, cambio de tecnología..." class="w-full text-sm p-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
+                </div>
+            </div>
+            <div class="p-6 bg-slate-50 border-t border-slate-100 flex justify-end gap-3">
+                <button onclick="closeAiGeneratorModal()" class="px-4 py-2.5 text-slate-600 text-sm font-medium hover:bg-slate-200 rounded-xl">Cancelar</button>
+                <button onclick="generateAiPlan()" id="btn-generate-ai" class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold rounded-xl shadow-md flex items-center gap-2">
+                    <i class="fa-solid fa-bolt"></i> Generar Plan
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Analysis Modal -->
+    <div id="modal-ai-analysis" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl border border-slate-200">
+            <div class="p-6 border-b border-slate-100 flex justify-between items-center bg-indigo-50/50">
+                <div class="flex items-center gap-3">
+                    <div class="p-2.5 bg-indigo-600 text-white rounded-xl">
+                        <i class="fa-solid fa-brain text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900">Evaluación de Plan por IA Gemini</h3>
+                        <p class="text-xs text-slate-500">Recomendaciones del Coach de Desarrollo Profesional</p>
+                    </div>
+                </div>
+                <button onclick="closeAiAnalysisModal()" class="text-slate-400 hover:text-slate-600 text-lg">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-6 space-y-4" id="ai-analysis-content">
+                <!-- Dynamic Content -->
+            </div>
+            <div class="p-6 bg-slate-50 border-t border-slate-100 flex justify-end">
+                <button onclick="closeAiAnalysisModal()" class="px-5 py-2.5 bg-slate-800 text-white text-sm font-semibold rounded-xl">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Floating Chat Drawer -->
+    <div id="ai-chat-drawer" class="fixed bottom-4 right-4 z-40 w-80 sm:w-96 bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col hidden transition-all duration-300 max-h-[500px] h-[450px]">
+        <div class="bg-slate-900 text-white p-4 rounded-t-2xl flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-indigo-500/20 border border-indigo-400/30 flex items-center justify-center text-amber-300 text-xs">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xs sm:text-sm">IA Career Coach (Gemini)</h4>
+                    <p class="text-[10px] text-indigo-200">Asistente 70-20-10 en vivo</p>
+                </div>
+            </div>
+            <button onclick="toggleAiChat()" class="text-slate-400 hover:text-white">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div id="ai-chat-messages" class="flex-grow p-4 overflow-y-auto space-y-3 text-xs bg-slate-50">
+            <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm text-slate-700 leading-relaxed">
+                👋 ¡Hola! Soy tu mentor IA. Pregúntame cómo pedir mentoría, cómo proponer un proyecto 70% a tu jefe o sugerencias para medir tu progreso.
+            </div>
+        </div>
+        <div class="p-3 bg-white border-t border-slate-200 rounded-b-2xl flex gap-2">
+            <input type="text" id="ai-chat-input" placeholder="Haz una pregunta sobre tu desarrollo..." class="flex-grow text-xs p-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none" onkeydown="if(event.key==='Enter') sendAiChatMessage()">
+            <button onclick="sendAiChatMessage()" id="btn-chat-send" class="bg-indigo-600 hover:bg-indigo-500 text-white px-3.5 py-2.5 rounded-xl transition text-xs font-semibold flex items-center justify-center">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Floating Toggle Button for Chat -->
+    <button onclick="toggleAiChat()" class="fixed bottom-5 right-5 z-30 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 text-white p-3.5 rounded-full shadow-2xl transition flex items-center gap-2 font-semibold text-xs border border-indigo-300/40">
+        <i class="fa-solid fa-comments text-amber-300 text-base"></i>
+        <span class="hidden sm:inline">Preguntar al Coach IA</span>
+    </button>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-5 left-5 bg-slate-900 text-white px-5 py-3 rounded-xl shadow-2xl text-sm font-medium flex items-center gap-3 transition-all transform translate-y-20 opacity-0 z-50">
+        <i class="fa-solid fa-check-circle text-emerald-400 text-lg"></i>
+        <span id="toast-msg">Mensaje de notificación</span>
+    </div>
+
+    <script>
+        async function callGemini(userPrompt, systemInstruction = null, responseSchema = null) {
+            const apiKey = "";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+            
+            const payload = {
+                contents: [{ parts: [{ text: userPrompt }] }]
+            };
+            
+            if (systemInstruction) {
+                payload.systemInstruction = { parts: [{ text: systemInstruction }] };
+            }
+            
+            if (responseSchema) {
+                payload.generationConfig = {
+                    responseMimeType: "application/json",
+                    responseSchema: responseSchema
+                };
+            }
+            
+            let delay = 1000;
+            for (let i = 0; i < 3; i++) {
+                try {
+                    const res = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                    const data = await res.json();
+                    return data;
+                } catch (err) {
+                    if (i === 2) throw err;
+                    await new Promise(r => setTimeout(r, delay));
+                    delay *= 2;
+                }
+            }
+        }
+
+        function openAiGeneratorModal() {
+            document.getElementById('modal-ai-generator').classList.remove('hidden');
+        }
+
+        function closeAiGeneratorModal() {
+            document.getElementById('modal-ai-generator').classList.add('hidden');
+        }
+
+        async function generateAiPlan() {
+            const role = document.getElementById('ai-input-role').value.trim();
+            const goal = document.getElementById('ai-input-goal').value.trim();
+            const context = document.getElementById('ai-input-context').value.trim();
+
+            if (!role || !goal) {
+                showToast("Por favor ingresa tu puesto y competencia deseada.");
+                return;
+            }
+
+            const btn = document.getElementById('btn-generate-ai');
+            btn.disabled = true;
+            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Generando...`;
+
+            const prompt = `Puesto: ${role}\nMeta / Competencia: ${goal}\nContexto: ${context || 'N/A'}`;
+            const sysInstruction = `Eres un experto en Desarrollo Organizacional y Coaching Ejecutivo especializado en la metodología 70-20-10.
+Genera un plan accionable y específico con:
+- 3 acciones prácticas de Experiencia (70%)
+- 3 acciones de Aprendizaje Social (20%)
+- 3 acciones de Aprendizaje Formal (10%)`;
+
+            const schema = {
+                type: "OBJECT",
+                properties: {
+                    competencyTitle: { type: "STRING" },
+                    tasks70: { type: "ARRAY", items: { type: "STRING" } },
+                    tasks20: { type: "ARRAY", items: { type: "STRING" } },
+                    tasks10: { type: "ARRAY", items: { type: "STRING" } }
+                },
+                required: ["competencyTitle", "tasks70", "tasks20", "tasks10"]
+            };
+
+            try {
+                const res = await callGemini(prompt, sysInstruction, schema);
+                const jsonText = res.candidates?.[0]?.content?.parts?.[0]?.text;
+                if (jsonText) {
+                    const planData = JSON.parse(jsonText);
+                    
+                    // Set custom dropdown and title
+                    const select = document.getElementById('competency-select');
+                    select.value = 'custom';
+                    document.getElementById('custom-competency-wrapper').classList.remove('hidden');
+                    document.getElementById('custom-competency-input').value = `${planData.competencyTitle} (${role})`;
+
+                    // Populate tasks
+                    ['70', '20', '10'].forEach(pillar => {
+                        const container = document.getElementById(`tasks-${pillar}-container`);
+                        container.innerHTML = '';
+                        const taskList = planData[`tasks${pillar}`] || [];
+                        taskList.forEach((task, idx) => {
+                            const id = `chk-${pillar}-ai-${idx}`;
+                            const div = document.createElement('div');
+                            div.className = 'flex items-start gap-2 bg-white p-2 rounded border border-indigo-100 shadow-sm';
+                            div.innerHTML = `
+                                <input type="checkbox" id="${id}" checked class="mt-0.5 accent-indigo-600 cursor-pointer">
+                                <label for="${id}" class="text-slate-700 cursor-pointer text-xs">${task}</label>
+                            `;
+                            container.appendChild(div);
+                        });
+                    });
+
+                    closeAiGeneratorModal();
+                    showToast("¡Plan generado por IA aplicado con éxito!");
+                } else {
+                    showToast("No se pudo estructurar el plan. Intenta nuevamente.");
+                }
+            } catch (e) {
+                showToast("Error al conectar con la IA de Gemini.");
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = `<i class="fa-solid fa-bolt"></i> Generar Plan`;
+            }
+        }
+
+        async function analyzePlanWithAi() {
+            const summaryText = getSelectedPlanSummary();
+            const modal = document.getElementById('modal-ai-analysis');
+            const content = document.getElementById('ai-analysis-content');
+            const btn = document.getElementById('btn-ai-analyze');
+
+            btn.disabled = true;
+            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Analizando...`;
+
+            const sysInstruction = "Actúa como un Gerente de Talento Humano y Coach de Carrera. Evalúa este Plan de Desarrollo Individual 70-20-10 en español. Ofrece: 1) Diagnóstico de equilibrio del plan, 2) 2 fortalezas principales, 3) 2 recomendaciones para potenciar los resultados, y 4) 2 KPIs/indicadores sugeridos para medir el éxito. Usa formato HTML limpio con encabezados claros e iconos FontAwesome.";
+
+            try {
+                const res = await callGemini(`Analiza el siguiente plan:\n${summaryText}`, sysInstruction);
+                const aiText = res.candidates?.[0]?.content?.parts?.[0]?.text;
+                if (aiText) {
+                    content.innerHTML = `<div class="prose text-xs text-slate-700 leading-relaxed space-y-3">${aiText.replace(/\n/g, '<br>')}</div>`;
+                    modal.classList.remove('hidden');
+                } else {
+                    showToast("Error al generar análisis.");
+                }
+            } catch (err) {
+                showToast("No se pudo obtener la evaluación con IA.");
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = `<i class="fa-solid fa-brain text-indigo-600"></i> Analizar Plan con IA`;
+            }
+        }
+
+        function closeAiAnalysisModal() {
+            document.getElementById('modal-ai-analysis').classList.add('hidden');
+        }
+
+        function toggleAiChat() {
+            const drawer = document.getElementById('ai-chat-drawer');
+            drawer.classList.toggle('hidden');
+        }
+
+        async function sendAiChatMessage() {
+            const input = document.getElementById('ai-chat-input');
+            const query = input.value.trim();
+            if (!query) return;
+
+            const container = document.getElementById('ai-chat-messages');
+            
+            // Add user bubble
+            const userBubble = document.createElement('div');
+            userBubble.className = 'bg-indigo-600 text-white p-3 rounded-xl ml-6 shadow-sm font-medium';
+            userBubble.innerText = query;
+            container.appendChild(userBubble);
+            input.value = '';
+            container.scrollTop = container.scrollHeight;
+
+            // Add loading bubble
+            const loadingBubble = document.createElement('div');
+            loadingBubble.className = 'bg-white p-3 rounded-xl border border-slate-200 text-slate-500 italic flex items-center gap-2';
+            loadingBubble.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin text-indigo-600"></i> Pensando...`;
+            container.appendChild(loadingBubble);
+            container.scrollTop = container.scrollHeight;
+
+            const sysInstruction = "Eres un Asistente Mentor de Desarrollo Profesional especializado en el modelo 70-20-10. Responde consultas laborales de forma concisa, empática y práctica (máximo 3 párrafos cortos).";
+
+            try {
+                const res = await callGemini(query, sysInstruction);
+                const reply = res.candidates?.[0]?.content?.parts?.[0]?.text || "Lo siento, no pude procesar la respuesta.";
+                loadingBubble.className = 'bg-white p-3 rounded-xl border border-slate-200 text-slate-700 shadow-sm leading-relaxed';
+                loadingBubble.innerHTML = reply.replace(/\n/g, '<br>');
+            } catch (e) {
+                loadingBubble.className = 'bg-red-50 p-3 rounded-xl border border-red-200 text-red-600';
+                loadingBubble.innerText = 'Error al consultar al Coach IA.';
+            }
+            container.scrollTop = container.scrollHeight;
+        }
+
+        const pillarData = {
+            '70': {
+                title: '70% Aprendizaje Experiencial',
+                icon: 'fa-briefcase',
+                desc: 'Ocurre mediante la resolución de problemas reales, asumiendo nuevas responsabilidades y ejecutando tareas en el puesto de trabajo. Representa la mayor aceleración del aprendizaje práctico.',
+                colorClass: 'bg-blue-100 text-blue-800 border-blue-600'
+            },
+            '20': {
+                title: '20% Aprendizaje Social',
+                icon: 'fa-users',
+                desc: 'Se logra mediante la interacción interpersonal: conversaciones de retroalimentación con líderes, sesiones de mentoring, coaching, redes internas de expertos y proyectos colaborativos.',
+                colorClass: 'bg-sky-100 text-sky-800 border-sky-600'
+            },
+            '10': {
+                title: '10% Aprendizaje Formal',
+                icon: 'fa-graduation-cap',
+                desc: 'Comprende programas educativos estructurados: diplomados, talleres, e-learning, lecturas técnicas y certificaciones. Brinda los conceptos fundamentales para la práctica.',
+                colorClass: 'bg-teal-100 text-teal-800 border-teal-600'
+            }
+        };
+
+        function selectPillar(pillarKey) {
+            const cards = { '70': 'card-70', '20': 'card-20', '10': 'card-10' };
+            Object.keys(cards).forEach(k => {
+                const card = document.getElementById(cards[k]);
+                if (k === pillarKey) {
+                    card.classList.add('border-2', 'border-blue-600', 'shadow-xl');
+                    card.classList.remove('border-slate-200');
+                } else {
+                    card.classList.remove('border-2', 'border-blue-600', 'shadow-xl');
+                    card.classList.add('border-slate-200');
+                }
+            });
+
+            const p = pillarData[pillarKey];
+            document.getElementById('detail-icon').className = `fa-solid ${p.icon}`;
+            document.getElementById('detail-title').innerText = p.title;
+            document.getElementById('detail-desc').innerHTML = p.desc;
+        }
+
+        let diagChart;
+
+        function initDiagnosticChart() {
+            const ctx = document.getElementById('diagChart').getContext('2d');
+            diagChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['70% Experiencial', '20% Social', '10% Formal'],
+                    datasets: [{
+                        data: [50, 25, 25],
+                        backgroundColor: ['#1d4ed8', '#0284c7', '#0d9488'],
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    cutout: '65%'
+                }
+            });
+        }
+
+        function updateDiagnostic() {
+            const v70 = parseInt(document.getElementById('input-70').value);
+            const v20 = parseInt(document.getElementById('input-20').value);
+            const v10 = parseInt(document.getElementById('input-10').value);
+
+            document.getElementById('val-70').innerText = v70 + '%';
+            document.getElementById('val-20').innerText = v20 + '%';
+            document.getElementById('val-10').innerText = v10 + '%';
+
+            diagChart.data.datasets[0].data = [v70, v20, v10];
+            diagChart.update();
+
+            const feedback = document.getElementById('diag-feedback');
+            const total = v70 + v20 + v10;
+
+            let msg = `<strong>Suma total actual: ${total}%</strong>. `;
+            if (v10 > 40) {
+                msg += "Estás invirtiendo mucho tiempo en teoría formal. Intenta mover el conocimiento hacia proyectos de práctica directa (70%).";
+            } else if (v70 >= 60 && v20 >= 15 && v10 <= 20) {
+                msg += "¡Excelente equilibrio! Tu distribución está muy alineada con el modelo óptimo 70-20-10.";
+            } else {
+                msg += "Asegúrate de fortalecer tus redes de acompañamiento (20%) e incorporar metas prácticas retadoras en tu labor habitual (70%).";
+            }
+            feedback.innerHTML = msg;
+        }
+
+        const competencyPresets = {
+            leadership: {
+                '70': [
+                    'Liderar una iniciativa o comité interdepartamental este trimestre.',
+                    'Delegar el seguimiento de un proyecto clave en un colaborador y brindarle autonomía.',
+                    'Rotar temporalmente funciones críticas para comprender otras áreas operativas.'
+                ],
+                '20': [
+                    'Agendar sesiones quincenales de 1-on-1 de retroalimentación con el equipo.',
+                    'Solicitar mentoría a un director o gerencia senior sobre visión estratégica.',
+                    'Unirse a una comunidad de líderes de la organización.'
+                ],
+                '10': [
+                    'Completar el curso en línea de "Liderazgo Adaptativo e Inteligencia Emocional".',
+                    'Leer el libro especial de gestión de equipos y preparar un resumen.',
+                    'Asistir al taller intensivo de conversaciones difíciles.'
+                ]
+            },
+            communication: {
+                '70': [
+                    'Presentar los resultados mensuales frente al comité directivo.',
+                    'Redactar y estructurar el boletín interno del departamento.',
+                    'Facilitar un taller de alineación de expectativas con clientes internos.'
+                ],
+                '20': [
+                    'Pedir a un par de confianza feedback específico después de cada presentación.',
+                    'Observar la técnica de oratoria de un modelo a seguir en reuniones estratégicas.',
+                    'Participar en un club de práctica de pitch o hablar en público.'
+                ],
+                '10': [
+                    'Realizar una certificación de Storytelling para Negocios.',
+                    'Estudiar técnicas de síntesis de información y comunicación asertiva.',
+                    'Ver conferencias especializadas sobre presentación de alto impacto.'
+                ]
+            },
+            project: {
+                '70': [
+                    'Implementar una nueva metodología ágil (Scrum/Kanban) en un proyecto real.',
+                    'Gestionar la resolución de un problema crítico de la operación con fecha límite.',
+                    'Diseñar la hoja de ruta (Roadmap) de un producto o servicio interno.'
+                ],
+                '20': [
+                    'Realizar sesiones de "Post-Mortem" / Retrospectivas con el equipo tras cada entrega.',
+                    'Sostener reuniones bimestrales con un Scrum Master o Project Manager Senior.',
+                    'Recibir retroalimentación de los stakeholders sobre entregables.'
+                ],
+                '10': [
+                    'Tomar un diplomado o preparación para certificación PMP / Scrum Master.',
+                    'Leer el estándar internacional de administración de proyectos.',
+                    'Completar capacitación en herramientas avanzadas de gestión (Jira/Asana).'
+                ]
+            },
+            analytics: {
+                '70': [
+                    'Construir un Dashboard interactivo automatizado para el área.',
+                    'Liderar el análisis de causa raíz de un problema repetitivo en el departamento.',
+                    'Realizar proyecciones de indicadores clave (KPIs) para el próximo periodo.'
+                ],
+                '20': [
+                    'Sesiones de co-creación y revisión de código/datos con el equipo analítico.',
+                    'Coaching con un especialista en analítica de datos senior.',
+                    'Participar en foros o canales técnicos internos de resolución de dudas.'
+                ],
+                '10': [
+                    'Curso certificado de Excel Avanzado / Power BI / SQL o Python.',
+                    'Lecturas de metodologías de pensamiento estructurado y lógica.',
+                    'E-learning en interpretación de métricas de negocio.'
+                ]
+            },
+            custom: {
+                '70': ['Definir una tarea retadora práctica en tu puesto actual.'],
+                '20': ['Solicitar feedback constante a tu líder o mentor.'],
+                '10': ['Completar una lectura o curso especializado relacionado.']
+            }
+        };
+
+        function generatePlanTemplates() {
+            const select = document.getElementById('competency-select');
+            const customWrapper = document.getElementById('custom-competency-wrapper');
+            if (!select) return;
+            const val = select.value;
+
+            if (customWrapper) {
+                if (val === 'custom') {
+                    customWrapper.classList.remove('hidden');
+                } else {
+                    customWrapper.classList.add('hidden');
+                }
+            }
+
+            const preset = competencyPresets[val] || competencyPresets.custom;
+
+            ['70', '20', '10'].forEach(pillar => {
+                const container = document.getElementById(`tasks-${pillar}-container`);
+                if (!container) return;
+                container.innerHTML = '';
+                (preset[pillar] || []).forEach((task, index) => {
+                    const id = `chk-${pillar}-${index}`;
+                    const div = document.createElement('div');
+                    div.className = 'flex items-start gap-2 bg-white p-2 rounded border border-slate-200';
+                    div.innerHTML = `
+                        <input type="checkbox" id="${id}" checked class="mt-0.5 accent-blue-600 cursor-pointer">
+                        <label for="${id}" class="text-slate-700 cursor-pointer text-xs">${task}</label>
+                    `;
+                    container.appendChild(div);
+                });
+            });
+        }
+
+        function addCustomTask(pillar) {
+            const input = document.getElementById(`add-${pillar}-input`);
+            const text = input.value.trim();
+            if (!text) return;
+
+            const container = document.getElementById(`tasks-${pillar}-container`);
+            const id = `chk-${pillar}-custom-${Date.now()}`;
+            const div = document.createElement('div');
+            div.className = 'flex items-start gap-2 bg-white p-2 rounded border border-slate-200';
+            div.innerHTML = `
+                <input type="checkbox" id="${id}" checked class="mt-0.5 accent-blue-600 cursor-pointer">
+                <label for="${id}" class="text-slate-700 cursor-pointer text-xs">${text}</label>
+            `;
+            container.appendChild(div);
+            input.value = '';
+        }
+
+        function getSelectedPlanSummary() {
+            const select = document.getElementById('competency-select');
+            let competencyName = select.options[select.selectedIndex].text;
+            if (select.value === 'custom') {
+                const customVal = document.getElementById('custom-competency-input').value.trim();
+                if (customVal) competencyName = customVal;
+            }
+
+            let summary = `PLAN DE DESARROLLO INDIVIDUAL (PDI 70-20-10)\n`;
+            summary += `Objetivo / Competencia: ${competencyName}\n`;
+            summary += `--------------------------------------------------\n\n`;
+
+            ['70', '20', '10'].forEach(pillar => {
+                const titleMap = { '70': '70% APRENDIZAJE EXPERIENCIAL (Práctica)', '20': '20% APRENDIZAJE SOCIAL (Acompañamiento)', '10': '10% APRENDIZAJE FORMAL (Capacitación)' };
+                summary += `[${titleMap[pillar]}]\n`;
+                const container = document.getElementById(`tasks-${pillar}-container`);
+                const checkboxes = container.querySelectorAll('input[type="checkbox"]:checked');
+                if (checkboxes.length === 0) {
+                    summary += `  - Ninguna acción seleccionada.\n`;
+                } else {
+                    checkboxes.forEach(cb => {
+                        const label = cb.nextElementSibling.innerText;
+                        summary += `  ✓ ${label}\n`;
+                    });
+                }
+                summary += `\n`;
+            });
+
+            return summary;
+        }
+
+        function copyPlanToClipboard() {
+            const text = getSelectedPlanSummary();
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            showToast('Plan copiado al portapapeles');
+        }
+
+        function showSummaryModal() {
+            const modal = document.getElementById('modal-preview');
+            const body = document.getElementById('modal-content-body');
+            const text = getSelectedPlanSummary();
+
+            body.innerHTML = `<pre class="bg-slate-50 p-4 rounded-xl text-xs font-mono text-slate-800 whitespace-pre-wrap border border-slate-200">${text}</pre>`;
+            modal.classList.remove('hidden');
+        }
+
+        function closeSummaryModal() {
+            document.getElementById('modal-preview').classList.add('hidden');
+        }
+
+        const quizQuestions = [
+            {
+                q: 'Recibir retroalimentación mensual de tu líder sobre tu estilo de comunicación.',
+                correct: '20',
+                explanation: 'Es aprendizaje SOCIAL (20%), basado en interacción e intercambio de perspectiva con otros.'
+            },
+            {
+                q: 'Asumir temporalmente el rol de líder de proyecto para implementar un nuevo software.',
+                correct: '70',
+                explanation: 'Es aprendizaje EXPERIENCIAL (70%), una tarea retadora de práctica directa en el puesto.'
+            },
+            {
+                q: 'Completar un curso e-learning con certificación oficial sobre gestión del tiempo.',
+                correct: '10',
+                explanation: 'Es aprendizaje FORMAL (10%), estructurado y con un temario teórico programado.'
+            },
+            {
+                q: 'Participar en una sesión de mentoría con un directivo de otra área.',
+                correct: '20',
+                explanation: 'Es aprendizaje SOCIAL (20%), mentoría y trabajo en red.'
+            },
+            {
+                q: 'Resolver una falla imprevista en el servicio operando bajo presión.',
+                correct: '70',
+                explanation: 'Es aprendizaje EXPERIENCIAL (70%), enfrentar problemas reales fuera de la rutina.'
+            }
+        ];
+
+        let currentQuizIndex = 0;
+        let quizScore = 0;
+
+        function loadQuizQuestion() {
+            if (currentQuizIndex >= quizQuestions.length) {
+                showQuizResult();
+                return;
+            }
+
+            const item = quizQuestions[currentQuizIndex];
+            document.getElementById('quiz-progress-text').innerText = `Pregunta ${currentQuizIndex + 1} de ${quizQuestions.length}`;
+            document.getElementById('quiz-score-text').innerText = `Puntaje: ${quizScore}`;
+            document.getElementById('quiz-question').innerText = item.q;
+            document.getElementById('quiz-feedback').classList.add('hidden');
+            
+            // Enable options
+            const btns = document.querySelectorAll('#quiz-options button');
+            btns.forEach(b => b.disabled = false);
+        }
+
+        function answerQuiz(option) {
+            const item = quizQuestions[currentQuizIndex];
+            const feedback = document.getElementById('quiz-feedback');
+            const btns = document.querySelectorAll('#quiz-options button');
+            btns.forEach(b => b.disabled = true);
+
+            feedback.classList.remove('hidden');
+            if (option === item.correct) {
+                quizScore += 20;
+                feedback.className = 'mt-4 p-3 rounded-xl text-xs font-semibold text-center bg-emerald-500/20 text-emerald-300 border border-emerald-500/40';
+                feedback.innerHTML = `<i class="fa-solid fa-circle-check mr-1"></i> ¡Correcto! ${item.explanation}`;
+            } else {
+                feedback.className = 'mt-4 p-3 rounded-xl text-xs font-semibold text-center bg-red-500/20 text-red-300 border border-red-500/40';
+                feedback.innerHTML = `<i class="fa-solid fa-circle-xmark mr-1"></i> Incorrecto. ${item.explanation}`;
+            }
+
+            setTimeout(() => {
+                currentQuizIndex++;
+                loadQuizQuestion();
+            }, 2500);
+        }
+
+        function showQuizResult() {
+            document.getElementById('quiz-card').classList.add('hidden');
+            document.getElementById('quiz-result').classList.remove('hidden');
+            document.getElementById('quiz-final-score').innerHTML = `Obtuviste <strong>${quizScore} / 100 puntos</strong> en el conocimiento del Modelo 70-20-10.`;
+
+            if (typeof confetti === 'function' && quizScore >= 60) {
+                confetti({ particleCount: 80, spread: 60, origin: { y: 0.7 } });
+            }
+        }
+
+        function resetQuiz() {
+            currentQuizIndex = 0;
+            quizScore = 0;
+            document.getElementById('quiz-result').classList.add('hidden');
+            document.getElementById('quiz-card').classList.remove('hidden');
+            loadQuizQuestion();
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-msg').innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        window.onload = function() {
+            initDiagnosticChart();
+            generatePlanTemplates();
+            loadQuizQuestion();
+        };
+    </script>
+</body>
+</html>
